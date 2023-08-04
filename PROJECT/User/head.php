@@ -1,0 +1,84 @@
+<?php
+session_start();
+include("../Assets/Connection/Connection.php");
+$selqry="select * from tbl_user where user_id='".$_SESSION['uid']."'";
+$res=$conn->query($selqry);
+$data=$res->fetch_assoc();
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Template Mo">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+  <title>WOMENS PARTNER</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../Assets/Template/User/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="../Assets/Template/User/assets/css/fontawesome.css">
+  <link rel="stylesheet" href="../Assets/Template/User/assets/css/templatemo-edu-meeting.css">
+  <link rel="stylesheet" href="../Assets/Template/User/assets/css/owl.css">
+  <link rel="stylesheet" href="../Assets/Template/User/assets/css/lightbox.css">
+  <link rel="stylesheet" href="../Assets/Template/css/form.css" />
+
+</head>
+
+<body>
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <nav class="main-nav">
+            <!-- ***** Logo Start ***** -->
+            <a href="index.html" class="logo">
+              Women's Partner
+            </a>
+            <!-- ***** Logo End ***** -->
+            <!-- ***** Menu Start ***** -->
+            <ul class="nav">
+              <li><a href="homepage.php">Home</a></li>
+              <li><a href="DoctorList.php">Consult a Doctor</a></li>
+              <li><a href="Mypost.php">My Post</a></li>
+              <li><a href="ChatList.php">Messages</a></li>
+              <li><a href="Articles.php">Articles</a></li>
+              <li class="has-sub">
+                <a href="javascript:void(0)"><?php echo $data['user_name'];?></a>
+                <ul class="sub-menu">
+                  <li><a href="Myprofile.php">MY PROFILE</a></li>
+                  <li><a href="Mycomplaint.php">MY COMPLAINT</a></li>
+                  <li><a href="Logout.php">LOG OUT</a></li>
+                </ul>
+              </li>
+            </ul>
+            <a class='menu-trigger'>
+              <span>Menu</span>
+            </a>
+            <!-- ***** Menu End ***** -->
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <section style="padding-top:129px;padding-bottom: 0px;" class="heading-page header-text" id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h2>Women's Partner</h2>
+          <h6><!-- Tag Line --></h6>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="meetings-page" id="meetings">
